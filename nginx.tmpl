@@ -11,7 +11,7 @@ events {
 
 http {
 
-  proxy_cache_path       /data/nginx/cache/udir levels=1:2 keys_zone=udir_cache:10m inactive=1y max_size=500m;
+  proxy_cache_path       ${VOLUME} levels=1:2 keys_zone=udir_cache:10m inactive=1y max_size=500m;
   
   log_format cache '$remote_addr - $upstream_cache_status [$time_local]  '
                    '"$request" $status $body_bytes_sent '
@@ -24,8 +24,7 @@ http {
     location / {
       set $url_udir          'data.udir.no';
 
-      resolver               10.0.0.2 valid=300s;     # Amazon
-      # resolver             192.168.10.6 valid=300s; # Knowit
+      resolver               ${DNS_SERVER} valid=300s;
       resolver_timeout       10s;
       
       add_header             X-Cache-Status $upstream_cache_status;
