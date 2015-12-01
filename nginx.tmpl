@@ -10,7 +10,6 @@ events {
 }
 
 http {
-
   proxy_cache_path       ${VOLUME} levels=1:2 keys_zone=udir_cache:10m inactive=1y max_size=500m;
   
   log_format cache '$remote_addr - $upstream_cache_status [$time_local]  '
@@ -35,5 +34,12 @@ http {
       proxy_cache_valid      200 301 302 1w; 
       proxy_cache_valid      any 5m; 
     }
-  }
+
+    location /api-docs/udir-proxy { 
+      default_type application/json;
+      sub_filter 'SERVER_HOST'  '$http_host';
+      sub_filter_once on;
+      sub_filter_types application/json;
+      alias /data/www/api-docs/index.json; }
+    }
 }
