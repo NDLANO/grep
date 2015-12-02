@@ -19,9 +19,15 @@ http {
     charset UTF-8;
     access_log /var/log/nginx/access.log cache;
     error_log stderr debug;
+    
+    # Need this because docker exposed port is not equal to the nginx listen port.
+    location /udir {
+      return 301 $scheme://$http_host$request_uri/;
+    }
 
-    location / {
+    location /udir/ {
       set $url_udir          'data.udir.no';
+      rewrite ^/udir(.*) $1 break; 
 
       resolver               ${DNS_SERVER} valid=300s;
       resolver_timeout       10s;
@@ -35,7 +41,7 @@ http {
       proxy_cache_valid      any 5m; 
     }
 
-    location /api-docs/udir-proxy { 
+    location /api-docs/udir { 
       default_type application/json;
       sub_filter 'SERVER_HOST'  '$http_host';
       sub_filter_once on;

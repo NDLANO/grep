@@ -2,7 +2,7 @@
   "apiVersion":"0.8",
   "swaggerVersion":"1.2",
   "basePath":"http://SERVER_HOST",
-  "resourcePath":"/udir-proxy/kl06",
+  "resourcePath":"/udir/kl06",
   "produces":[
     "application/json"
   ],
@@ -14,7 +14,7 @@
   ],
   "apis":[    
     {
-      "path":"/udir-proxy/kl06/fagkoder",
+      "path":"/udir/kl06/fagkoder",
       "operations":[
         {
           "method":"GET",
@@ -36,7 +36,7 @@
       ]
     },
     {
-      "path":"/udir-proxy/kl06/laereplaner",
+      "path":"/udir/kl06/laereplaner",
       "operations":[
         {
           "method":"GET",
@@ -58,7 +58,7 @@
       ]
     },
         {
-      "path":"/udir-proxy/kl06/utdanningsprogram",
+      "path":"/udir/kl06/utdanningsprogram",
       "operations":[
         {
           "method":"GET",
@@ -80,7 +80,7 @@
       ]
     },
         {
-      "path":"/udir-proxy/kl06/programomraader",
+      "path":"/udir/kl06/programomraader",
       "operations":[
         {
           "method":"GET",
@@ -102,7 +102,7 @@
       ]
     },
         {
-      "path":"/udir-proxy/kl06/merknader",
+      "path":"/udir/kl06/merknader",
       "operations":[
         {
           "method":"GET",
@@ -124,7 +124,7 @@
       ]
     },
         {
-      "path":"/udir-proxy/kl06/merkelapper",
+      "path":"/udir/kl06/merkelapper",
       "operations":[
         {
           "method":"GET",
@@ -146,7 +146,7 @@
       ]
     },
         {
-      "path":"/udir-proxy/kl06/fagomraader",
+      "path":"/udir/kl06/fagomraader",
       "operations":[
         {
           "method":"GET",
@@ -168,7 +168,7 @@
       ]
     },
         {
-      "path":"/udir-proxy/kl06/fagkategorier",
+      "path":"/udir/kl06/fagkategorier",
       "operations":[
         {
           "method":"GET",
@@ -190,7 +190,7 @@
       ]
     },
     {
-      "path":"/udir-proxy/kl06/kompetansemaal",
+      "path":"/udir/kl06/kompetansemaal",
       "operations":[
         {
           "method":"GET",
@@ -212,7 +212,7 @@
       ]
     },
     {
-      "path":"/udir-proxy/kl06/opplaeringsfag",
+      "path":"/udir/kl06/opplaeringsfag",
       "operations":[
         {
           "method":"GET",
@@ -234,7 +234,7 @@
       ]
     },
     {
-      "path":"/udir-proxy/kl06/aarstrinn",
+      "path":"/udir/kl06/aarstrinn",
       "operations":[
         {
           "method":"GET",
@@ -256,7 +256,7 @@
       ]
     },
     {
-      "path":"/udir-proxy/kl06/{kode}",
+      "path":"/udir/kl06/{kode}",
       "operations":[
         {
           "method":"GET",
