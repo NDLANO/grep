@@ -1,0 +1,288 @@
+{
+  "apiVersion":"0.8",
+  "swaggerVersion":"1.2",
+  "basePath":"http://SERVER_HOST",
+  "resourcePath":"/udir/kl06",
+  "produces":[
+    "application/json"
+  ],
+  "consumes":[
+    "application/json"
+  ],
+  "protocols":[
+    "http"
+  ],
+  "apis":[    
+    {
+      "path":"/udir/kl06/fagkoder",
+      "operations":[
+        {
+          "method":"GET",
+          "summary":"Get all subjects.",
+          "position":0,
+          "notes":"See full documentation at http://grepwiki.udir.no/images/1/1e/Brukermanual_for_Grep_soap_odata_rest.pdf.",
+          "deprecated":false,
+          "nickname":"getSubjects",
+          "parameters":[                        
+            {
+              "name":"lang",
+              "description":"Language in ISO 639-2 format. If no traslation is available null is returned. Use 'default' to get the main language. If blank, all translations are returned.",
+              "required":false,
+              "paramType":"query",
+              "type":"string"
+            }            
+          ]          
+        }
+      ]
+    },
+    {
+      "path":"/udir/kl06/laereplaner",
+      "operations":[
+        {
+          "method":"GET",
+          "summary":"Get all curricula. ",
+          "position":0,
+          "notes":"See full documentation at http://grepwiki.udir.no/images/1/1e/Brukermanual_for_Grep_soap_odata_rest.pdf.",
+          "deprecated":false,
+          "nickname":"getCurricula",
+          "parameters":[                        
+            {
+              "name":"lang",
+              "description":"Language in ISO 639-2 format. If no traslation is available null is returned. Use 'default' to get the main language. If blank, all translations are returned.",
+              "required":false,
+              "paramType":"query",
+              "type":"string"
+            }       
+          ]          
+        }
+      ]
+    },
+        {
+      "path":"/udir/kl06/utdanningsprogram",
+      "operations":[
+        {
+          "method":"GET",
+          "summary":"Get all education programs. ",
+          "position":0,
+          "notes":"See full documentation at http://grepwiki.udir.no/images/1/1e/Brukermanual_for_Grep_soap_odata_rest.pdf.",
+          "deprecated":false,
+          "nickname":"getEducationPrograms",
+          "parameters":[                        
+            {
+              "name":"lang",
+              "description":"Language in ISO 639-2 format. If no traslation is available null is returned. Use 'default' to get the main language. If blank, all translations are returned.",
+              "required":false,
+              "paramType":"query",
+              "type":"string"
+            }            
+          ]          
+        }
+      ]
+    },
+        {
+      "path":"/udir/kl06/programomraader",
+      "operations":[
+        {
+          "method":"GET",
+          "summary":"Get all program areas.",
+          "position":0,
+          "notes":"See full documentation at http://grepwiki.udir.no/images/1/1e/Brukermanual_for_Grep_soap_odata_rest.pdf.",
+          "deprecated":false,
+          "nickname":"getProgramAreas",
+          "parameters":[                        
+            {
+              "name":"lang",
+              "description":"Language in ISO 639-2 format. If no traslation is available null is returned. Use 'default' to get the main language. If blank, all translations are returned.",
+              "required":false,
+              "paramType":"query",
+              "type":"string"
+            }            
+          ]          
+        }
+      ]
+    },
+        {
+      "path":"/udir/kl06/merknader",
+      "operations":[
+        {
+          "method":"GET",
+          "summary":"Get all notices.",
+          "position":0,
+          "notes":"See full documentation at http://grepwiki.udir.no/images/1/1e/Brukermanual_for_Grep_soap_odata_rest.pdf.",
+          "deprecated":false,
+          "nickname":"getNotices",
+          "parameters":[                        
+            {
+              "name":"lang",
+              "description":"Language in ISO 639-2 format. If no traslation is available null is returned. Use 'default' to get the main language. If blank, all translations are returned.",
+              "required":false,
+              "paramType":"query",
+              "type":"string"
+            }
+          ]          
+        }
+      ]
+    },
+        {
+      "path":"/udir/kl06/merkelapper",
+      "operations":[
+        {
+          "method":"GET",
+          "summary":"Get all labels.",
+          "position":0,
+          "notes":"See full documentation at http://grepwiki.udir.no/images/1/1e/Brukermanual_for_Grep_soap_odata_rest.pdf.",
+          "deprecated":false,
+          "nickname":"getLabels",
+          "parameters":[                        
+            {
+              "name":"lang",
+              "description":"Language in ISO 639-2 format. If no traslation is available null is returned. Use 'default' to get the main language. If blank, all translations are returned.",
+              "required":false,
+              "paramType":"query",
+              "type":"string"
+            }
+          ]          
+        }
+      ]
+    },
+        {
+      "path":"/udir/kl06/fagomraader",
+      "operations":[
+        {
+          "method":"GET",
+          "summary":"Get all disciplines.",
+          "position":0,
+          "notes":"See full documentation at http://grepwiki.udir.no/images/1/1e/Brukermanual_for_Grep_soap_odata_rest.pdf.",
+          "deprecated":false,
+          "nickname":"getDiciplines",
+          "parameters":[                        
+            {
+              "name":"lang",
+              "description":"Language in ISO 639-2 format. If no traslation is available null is returned. Use 'default' to get the main language. If blank, all translations are returned.",
+              "required":false,
+              "paramType":"query",
+              "type":"string"
+            }
+          ]          
+        }
+      ]
+    },
+        {
+      "path":"/udir/kl06/fagkategorier",
+      "operations":[
+        {
+          "method":"GET",
+          "summary":"Get all subject categories.",
+          "position":0,
+          "notes":"See full documentation at http://grepwiki.udir.no/images/1/1e/Brukermanual_for_Grep_soap_odata_rest.pdf.",
+          "deprecated":false,
+          "nickname":"getSubjectCategories",
+          "parameters":[                        
+            {
+              "name":"lang",
+              "description":"Language in ISO 639-2 format. If no traslation is available null is returned. Use 'default' to get the main language. If blank, all translations are returned.",
+              "required":false,
+              "paramType":"query",
+              "type":"string"
+            }
+          ]          
+        }
+      ]
+    },
+    {
+      "path":"/udir/kl06/kompetansemaal",
+      "operations":[
+        {
+          "method":"GET",
+          "summary":"Get all competence aims.",
+          "position":0,
+          "notes":"See full documentation at http://grepwiki.udir.no/images/1/1e/Brukermanual_for_Grep_soap_odata_rest.pdf.",
+          "deprecated":false,
+          "nickname":"getCompetanceAims",
+          "parameters":[                        
+            {
+              "name":"lang",
+              "description":"Language in ISO 639-2 format. If no traslation is available null is returned. Use 'default' to get the main language. If blank, all translations are returned.",
+              "required":false,
+              "paramType":"query",
+              "type":"string"
+            }
+          ]          
+        }
+      ]
+    },
+    {
+      "path":"/udir/kl06/opplaeringsfag",
+      "operations":[
+        {
+          "method":"GET",
+          "summary":"Get all trainig subjects.",
+          "position":0,
+          "notes":"See full documentation at http://grepwiki.udir.no/images/1/1e/Brukermanual_for_Grep_soap_odata_rest.pdf.",
+          "deprecated":false,
+          "nickname":"getTrainingSubjects",
+          "parameters":[                        
+            {
+              "name":"lang",
+              "description":"Language in ISO 639-2 format. If no traslation is available null is returned. Use 'default' to get the main language. If blank, all translations are returned.",
+              "required":false,
+              "paramType":"query",
+              "type":"string"
+            }
+          ]          
+        }
+      ]
+    },
+    {
+      "path":"/udir/kl06/aarstrinn",
+      "operations":[
+        {
+          "method":"GET",
+          "summary":"Get all grades.",
+          "position":0,
+          "notes":"See full documentation at http://grepwiki.udir.no/images/1/1e/Brukermanual_for_Grep_soap_odata_rest.pdf.",
+          "deprecated":false,
+          "nickname":"getGrades",
+          "parameters":[                        
+            {
+              "name":"lang",
+              "description":"Language in ISO 639-2 format. If no traslation is available null is returned. Use 'default' to get the main language. If blank, all translations are returned.",
+              "required":false,
+              "paramType":"query",
+              "type":"string"
+            }
+          ]          
+        }
+      ]
+    },
+    {
+      "path":"/udir/kl06/{kode}",
+      "operations":[
+        {
+          "method":"GET",
+          "summary":"Get element with the given code.",
+          "position":0,
+          "notes":"The following elements are supported: Subjects, Curricula, Educational programs, Program areas, Notices, Labels, Competance aims, Subject areas, Subject categories, Training subjects, Grades. See full documentation at http://grepwiki.udir.no/images/1/1e/Brukermanual_for_Grep_soap_odata_rest.pdf.",
+          "deprecated":false,
+          "nickname":"getCode",
+          "parameters":[
+           {
+              "name":"kode",
+              "description":"The code of the element. For example IDR1-01.",
+              "required":true,
+              "paramType":"path",
+              "type":"string"
+            },
+            {
+              "name":"lang",
+              "description":"Language in ISO 639-2 format. If no traslation is available null is returned. Use 'default' to get the main language. If blank, all translations are returned.",
+              "required":false,
+              "paramType":"query",
+              "type":"string"
+            }
+          ]          
+        }
+      ]
+    }
+  ]
+}

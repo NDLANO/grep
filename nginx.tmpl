@@ -1,0 +1,51 @@
+user  nginx;
+worker_processes  1;
+
+error_log  /var/log/nginx/error.log warn;
+pid        /var/run/nginx.pid;
+
+
+events {
+  worker_connections  1024;
+}
+
+http {
+  proxy_cache_path       ${VOLUME} levels=1:2 keys_zone=udir_cache:10m inactive=1y max_size=500m;
+  
+  log_format cache '$remote_addr - $upstream_cache_status [$time_local]  '
+                   '"$request" $status $body_bytes_sent '
+                   '"$http_referer" "$http_user_agent"';
+  server {
+    charset UTF-8;
+    access_log /var/log/nginx/access.log cache;
+    error_log stderr debug;
+    
+    # Need this because docker exposed port is not equal to the nginx listen port.
+    location /udir {
+      return 301 $scheme://$http_host$request_uri/;
+    }
+
+    location /udir/ {
+      set $url_udir          'data.udir.no';
+      rewrite ^/udir(.*) $1 break; 
+
+      resolver               ${DNS_SERVER} valid=300s;
+      resolver_timeout       10s;
+      
+      add_header             X-Cache-Status $upstream_cache_status;
+      proxy_pass             http://$url_udir;
+      proxy_cache            udir_cache;
+      proxy_cache_use_stale  error timeout invalid_header updating http_500 http_502 http_503 http_504;
+      proxy_ignore_headers   Cache-Control Expires; # Consider to remove this when udir sets reasonable caching time values. 
+      proxy_cache_valid      200 301 302 1w; 
+      proxy_cache_valid      any 5m; 
+    }
+
+    location /api-docs/udir { 
+      default_type application/json;
+      sub_filter 'SERVER_HOST'  '$http_host';
+      sub_filter_once on;
+      sub_filter_types application/json;
+      alias /data/www/api-docs/index.json; }
+    }
+}
