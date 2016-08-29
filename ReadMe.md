@@ -1,4 +1,4 @@
-# Udir Proxy
+# Grep
 
 Nginx caching proxy for http://data.udir.no, Utdanningsdirektoratet (Udir).
 
@@ -18,8 +18,3 @@ The following environmen variables are used by this project:
 
 ## Create Docker Image
     ./build.sh
-## Deploy
-   See the deploy project.
-
-You need to have a docker daemon running locally. Ex: [docker-machine](https://docs.docker.com/machine/)
-
