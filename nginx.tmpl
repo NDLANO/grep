@@ -48,4 +48,8 @@ http {
       sub_filter_types application/json;
       alias /data/www/api-docs/index.json; }
     }
+
+    location /health {
+      return 200 OK;
+    }
 }
