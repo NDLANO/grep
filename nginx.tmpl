@@ -49,7 +49,8 @@ http {
       alias /data/www/api-docs/index.json; }
     }
 
-    location /health {
-      return 200 OK;
+    location ~* ^/health$ {
+        add_header 'Content-Length' 0;
+        return 204;
     }
 }
