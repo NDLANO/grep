@@ -10,7 +10,7 @@ events {
 }
 
 http {
-  proxy_cache_path       ${VOLUME} levels=1:2 keys_zone=udir_cache:10m inactive=1y max_size=500m;
+  proxy_cache_path       /data/nginx/cache/grep levels=1:2 keys_zone=grep_cache:10m inactive=1y max_size=500m;
   
   log_format cache '$remote_addr - $upstream_cache_status [$time_local]  '
                    '"$request" $status $body_bytes_sent '
@@ -34,7 +34,7 @@ http {
       
       add_header             X-Cache-Status $upstream_cache_status;
       proxy_pass             http://$url_udir;
-      proxy_cache            udir_cache;
+      proxy_cache            grep_cache;
       proxy_cache_use_stale  error timeout invalid_header updating http_500 http_502 http_503 http_504;
       proxy_ignore_headers   Cache-Control Expires; # Consider to remove this when udir sets reasonable caching time values. 
       proxy_cache_valid      200 301 302 1w; 
